@@ -1,0 +1,14 @@
+[Unit]
+Description=Remote Power Control
+After=network.target
+
+[Service]
+Type=simple
+User=user
+WorkingDirectory=/home/user
+ExecStart=/home/user/venv/bin/python /home/user/phone-shutdown.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
